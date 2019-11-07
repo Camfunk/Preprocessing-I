@@ -1,1 +1,293 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  max-width: 100%;
+}
+@font-face {
+  font-family: 'Volkhov';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Volkhov Regular'), local('Volkhov-Regular'), url(https://fonts.gstatic.com/s/volkhov/v11/SlGQmQieoJcKemNecTUEgA.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Fredericka the Great';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Fredericka the Great'), local('FrederickatheGreat'), url(https://fonts.gstatic.com/s/frederickathegreat/v9/9Bt33CxNwt7aOctW2xjbCstzwVKsIBVV--SjxbI.ttf) format('truetype');
+}
+.navContainer {
+  background-color: #393e46;
+  color: #eeeeee;
+}
+@media (max-width: 500px) {
+  .navContainer {
+    background-color: #00adb5;
+  }
+}
+.navContainer nav {
+  display: flex;
+  justify-content: space-around;
+}
+@media (max-width: 500px) {
+  .navContainer nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+    box-shadow: 2px 6px #393e46;
+  }
+}
+.navContainer nav a {
+  text-decoration: none;
+  color: #00adb5;
+  font-size: 6rem;
+  border-radius: 10px;
+}
+@media (max-width: 500px) {
+  .navContainer nav a {
+    font-size: 4.5rem;
+    padding: 0.8rem;
+    color: #393e46;
+    box-shadow: 3px 4px #393e46;
+  }
+  .navContainer nav a:hover {
+    color: #eeeeee;
+    transition-duration: 200ms;
+  }
+}
+.imgContainer {
+  background-color: #222831;
+  display: flex;
+  justify-content: center;
+}
+@media (max-width: 500px) {
+  .imgContainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+.imgContainer p {
+  color: #eeeeee;
+  font-size: 2rem;
+  padding: 5rem;
+}
+@media (max-width: 500px) {
+  .imgContainer p {
+    padding: 1rem;
+  }
+}
+.imgContainer .stache {
+  width: 500px;
+  height: 400px;
+  padding: 2rem;
+  background-color: #393e46;
+}
+@media (max-width: 500px) {
+  .imgContainer .stache {
+    width: 500px;
+    height: 500px;
+  }
+}
+.imgContainer .stache .image {
+  margin: 0 auto;
+}
+.textContainer {
+  background-color: #393e46;
+  padding: 2rem;
+}
+.textContainer h1 {
+  font-family: "Fredericka the Great", cursive;
+  font-size: 5.3rem;
+  color: #eeeeee;
+  display: flex;
+  justify-content: center;
+}
+@media (max-width: 500px) {
+  .textContainer h1 {
+    text-align: center;
+  }
+}
+.headers h2 {
+  font-family: "Fredericka the Great", cursive;
+  font-size: 5.3rem;
+  color: #eeeeee;
+  display: flex;
+  justify-content: center;
+  color: #00adb5;
+  text-align: center;
+}
+@media (max-width: 500px) {
+  .headers h2 {
+    text-align: center;
+  }
+}
+h3 {
+  font-family: "Volkhov", serif;
+  font-size: 2.3rem;
+  color: #eeeeee;
+  text-align: center;
+  padding-top: 2rem;
+}
+.introPara {
+  display: flex;
+  justify-content: center;
+  font-family: "Volkhov", serif;
+  font-size: 2.3rem;
+  color: #eeeeee;
+}
+.aboutContainer {
+  background-color: #00adb5;
+}
+.aboutContainer h2 {
+  font-family: "Volkhov", serif;
+  font-size: 2.3rem;
+  color: #eeeeee;
+  color: #393e46;
+  text-align: center;
+  padding: 2rem;
+}
+p {
+  font-family: "Volkhov", serif;
+  font-size: 2.3rem;
+  color: #eeeeee;
+  text-align: center;
+  padding-bottom: 2rem;
+}
+.socialConects {
+  background-color: #393e46;
+  padding: 2rem;
+}

@@ -4,56 +4,320 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html,
+body {
+  height: 100%;
+  max-width: 100%;
 }
 
+//Variables, mixins, escape, and font imports
+@phone: ~"(max-width: 500px)";
+
+@import url("https://fonts.googleapis.com/css?family=Volkhov&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Fredericka+the+Great&display=swap");
+
+@black: #222831;
+@slate: #393e46;
+@blue: #00adb5;
+@white: #eeeeee;
+
+@headerFont: "Fredericka the Great", cursive;
+@bodyFont: "Volkhov", serif;
+
+//flex mixins
+
+.centerCenter() {
+  display: flex;
+  justify-content: center;
+}
+
+.centerColumn() {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+//text mixins
+
+.paraText() {
+  font-family: @bodyFont;
+  font-size: 2.3rem;
+  color: @white;
+}
+
+.headerText() {
+  font-family: @headerFont;
+  font-size: 5.3rem;
+  color: @white;
+}
+
+// Navigation Styling
+.navContainer {
+  background-color: @slate;
+  color: @white;
+
+  @media @phone {
+    background-color: @blue;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-around;
+
+    @media @phone {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap-reverse;
+      box-shadow: 2px 6px @slate;
+    }
+    a {
+      text-decoration: none;
+      color: @blue;
+      font-size: 6rem;
+      border-radius: 10px;
+
+      @media @phone {
+        font-size: 4.5rem;
+        padding: 0.8rem;
+        color: @slate;
+        box-shadow: 3px 4px @slate;
+
+        &:hover {
+          color: @white;
+          transition-duration: 200ms;
+        }
+      }
+    }
+  }
+}
+
+//Body Styling
+.imgContainer {
+  background-color: @black;
+  display: flex;
+  justify-content: center;
+
+  @media @phone {
+    .centerColumn;
+  }
+
+  p {
+    color: @white;
+    font-size: 2rem;
+    padding: 5rem;
+    @media @phone {
+      padding: 1rem;
+    }
+  }
+  .stache {
+    width: 500px;
+    height: 400px;
+    padding: 2rem;
+    background-color: @slate;
+
+    @media @phone {
+      width: 500px;
+      height: 500px;
+    }
+
+    .image {
+      margin: 0 auto;
+    }
+  }
+}
+
+.textContainer {
+  background-color: @slate;
+  padding: 2rem;
+
+  h1 {
+    .headerText();
+    .centerCenter();
+
+    @media @phone {
+      text-align: center;
+    }
+  }
+}
+
+.headers {
+  h2 {
+    .headerText();
+    .centerCenter();
+    color: @blue;
+    text-align: center;
+
+    @media @phone {
+      text-align: center;
+    }
+  }
+}
+
+h3 {
+  .paraText();
+  text-align: center;
+  padding-top: 2rem;
+}
+
+.introPara {
+  .centerCenter;
+  .paraText();
+}
+
+//About section
+.aboutContainer {
+  background-color: @blue;
+
+  h2 {
+    .paraText();
+    color: @slate;
+    text-align: center;
+    padding: 2rem;
+  }
+}
+
+p {
+  .paraText();
+  text-align: center;
+  padding-bottom: 2rem;
+}
+// skills Section
+
+.socialConects {
+  background-color: @slate;
+  padding: 2rem;
+}
+
+.icon {
+}
+//Footer Styling;
